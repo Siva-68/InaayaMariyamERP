@@ -1,0 +1,43 @@
+# Dependency directories
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build outputs
+client/dist/
+server/dist/
+
+# Environment files — NEVER commit real secrets
+server/.env
+.env
+.env.local
+.env.*.local
+
+# Generated reports and backups
+server/reports/
+server/backups/
+data/
+
+# Logs
+*.log
+npm-debug.log*
+server/logs/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+*.swp
+*.swo
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Jest coverage
+coverage/
+client/coverage/
+server/coverage/
+
+# PWA
+client/dist/sw.js
+client/dist/workbox-*.js

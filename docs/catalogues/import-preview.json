@@ -1,0 +1,350 @@
+[
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "1",
+    "name": "12  JAR",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "sellingPrice": "700367",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Missing purchase price / dealer price",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700367); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700795)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "50",
+    "name": "PCS",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 50,
+    "purchasePrice": "180.00",
+    "sellingPrice": "10",
+    "mrp": "200.00",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 10); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "2",
+    "name": "6  JAR",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "sellingPrice": "700380",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Missing purchase price / dealer price",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700380); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700383); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700384)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "6",
+    "name": "12 TRY",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "sellingPrice": "700373",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Missing purchase price / dealer price",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700373); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700025)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "1",
+    "name": "100 PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "50",
+    "name": "PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700769",
+    "sellingPrice": "30",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 30); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700770); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700771); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700772); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700765); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700768); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700766); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700767); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700773); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700774); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700790); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700791); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700792); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700796)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251520",
+    "name": "65G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "65G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251537",
+    "name": "60G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "60G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "No explicit price extracted — requires manual review",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251179",
+    "name": "90G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "90G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251612",
+    "name": "80G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "80G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251636",
+    "name": "75G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "75G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "No explicit price extracted — requires manual review",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8908002974508",
+    "name": "135G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "135G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8908002974515",
+    "name": "130G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "130G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "30",
+    "name": "TRY",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700789",
+    "sellingPrice": "70",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 70); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 70); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700793); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 700679); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125250561",
+    "name": "100G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "100G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "No explicit price extracted — requires manual review",
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8908002974430",
+    "name": "150G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "150G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251742",
+    "name": "180G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "180G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251360",
+    "name": "200G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "200G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125251681",
+    "name": "250G",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "netWeight": "250G",
+    "unitsPerCarton": 1,
+    "gstRate": null,
+    "status": "ambiguous",
+    "flags": [
+      "No explicit price extracted — requires manual review"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8906125250691",
+    "name": "15PCS",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 15,
+    "purchasePrice": "117.45",
+    "sellingPrice": "13",
+    "mrp": "135.00",
+    "gstRate": null,
+    "status": "valid",
+    "flags": []
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "1",
+    "name": "40 PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700775",
+    "sellingPrice": "35",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 35); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 35); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 35); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 35)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "5",
+    "name": "25 PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700398",
+    "sellingPrice": "35",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 35); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 40); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 40); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 80)"
+    ]
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "8",
+    "name": "60 PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700629",
+    "sellingPrice": "50",
+    "gstRate": null,
+    "status": "valid",
+    "flags": []
+  },
+  {
+    "sourceFile": "NEW MRP UPDATED DEALER PRICE LIST -2026.pdf",
+    "serialNumber": "9",
+    "name": "30 PAC",
+    "category": "Packaged Snacks",
+    "packType": "packet",
+    "unitsPerCarton": 1,
+    "purchasePrice": "700780",
+    "sellingPrice": "60",
+    "mrp": "8908002974119",
+    "gstRate": null,
+    "status": "conflict",
+    "flags": [
+      "Appears in multiple catalogues with conflicting details: NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 60); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 60); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 60); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 60); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 70); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 100); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: 100); NEW MRP UPDATED DEALER PRICE LIST -2026.pdf (Price: N/A)"
+    ]
+  }
+]

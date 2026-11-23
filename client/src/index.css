@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand CSS variables */
+:root {
+  --hm-primary: #2E8B57;
+  --hm-dark: #206B45;
+  --hm-light: #E8F5EC;
+  --hm-bg: #F7FAF7;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure full height app shell */
+#root {
+  min-height: 100dvh;
+  background-color: var(--hm-bg);
+}
+
+/* Better touch targets on mobile */
+button, [role="button"], a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Typography Utilities for Receipt & Bills */
+.font-times {
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif !important;
+}
+
+.font-modern-sans {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.font-georgia {
+  font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+.font-courier {
+  font-family: "Courier New", Courier, Lucida Console, monospace !important;
+}
+
+/* Dedicated Clean Print Styles for Receipt */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .printable-receipt, .printable-receipt * {
+    visibility: visible;
+  }
+  .printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

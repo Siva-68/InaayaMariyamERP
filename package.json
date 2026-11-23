@@ -1,0 +1,21 @@
+{
+  "name": "hinaya-mariyam-erp",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node server/dist/index.js",
+    "type-check": "npm run type-check --workspace=client && npm run type-check --workspace=server",
+    "test": "npm test --workspace=server",
+    "backup": "npm run backup --workspace=server",
+    "restore": "npm run restore --workspace=server"
+  }
+}
