@@ -8,6 +8,10 @@ import rateLimit from 'express-rate-limit';
 import mongoSanitize from 'express-mongo-sanitize';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+import mongoose from 'mongoose';
+import argon2 from 'argon2';
+import { User } from './models/User';
+import { Product } from './models/Product';
 
 import { connectDB } from './config/db';
 import { corsOptions } from './config/cors';
@@ -99,10 +103,104 @@ if (fs.existsSync(clientDistPath)) {
 app.use(notFound);
 app.use(errorHandler);
 
+// ── Initial Seed Guard ──────────────────────────────────────
+async function ensureInitialData() {
+  try {
+    const adminEmail = process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com';
+    let admin = await User.findOne({ email: adminEmail });
+    if (!admin) {
+      const defaultPassword = process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805';
+      const passwordHash = await argon2.hash(defaultPassword);
+      admin = await User.create({
+        name: 'Siva Prakash (Owner)',
+        email: adminEmail,
+        passwordHash,
+        role: 'admin',
+        isActive: true,
+      });
+      logger.info(`Initialized default admin account: ${adminEmail}`);
+    }
+
+    const productCount = await Product.countDocuments();
+    if (productCount === 0 && admin) {
+      await Product.insertMany([
+        {
+          name: 'Kaju Burfi 250g',
+          category: 'Sweets & Burfi',
+          sapCode: 'KB-250',
+          packType: 'packet',
+          netWeight: '250g',
+          unitsPerCarton: 20,
+          purchasePrice: mongoose.Types.Decimal128.fromString('180.00'),
+          sellingPrice: mongoose.Types.Decimal128.fromString('240.00'),
+          mrp: mongoose.Types.Decimal128.fromString('250.00'),
+          gstRate: 5,
+          stock: 45,
+          lowStockThreshold: 10,
+          isActive: true,
+          createdBy: admin._id,
+        },
+        {
+          name: 'Milk Peda 250g',
+          category: 'Sweets & Burfi',
+          sapCode: 'MP-250',
+          packType: 'packet',
+          netWeight: '250g',
+          unitsPerCarton: 24,
+          purchasePrice: mongoose.Types.Decimal128.fromString('120.00'),
+          sellingPrice: mongoose.Types.Decimal128.fromString('160.00'),
+          mrp: mongoose.Types.Decimal128.fromString('170.00'),
+          gstRate: 5,
+          stock: 30,
+          lowStockThreshold: 8,
+          isActive: true,
+          createdBy: admin._id,
+        },
+        {
+          name: 'Special Mixture 200g',
+          category: 'Snacks & Savouries',
+          sapCode: 'MIX-200',
+          packType: 'packet',
+          netWeight: '200g',
+          unitsPerCarton: 40,
+          purchasePrice: mongoose.Types.Decimal128.fromString('45.00'),
+          sellingPrice: mongoose.Types.Decimal128.fromString('65.00'),
+          mrp: mongoose.Types.Decimal128.fromString('70.00'),
+          gstRate: 5,
+          stock: 80,
+          lowStockThreshold: 15,
+          isActive: true,
+          createdBy: admin._id,
+        },
+        {
+          name: 'Butter Murukku 200g',
+          category: 'Snacks & Savouries',
+          sapCode: 'MUR-200',
+          packType: 'packet',
+          netWeight: '200g',
+          unitsPerCarton: 30,
+          purchasePrice: mongoose.Types.Decimal128.fromString('40.00'),
+          sellingPrice: mongoose.Types.Decimal128.fromString('60.00'),
+          mrp: mongoose.Types.Decimal128.fromString('65.00'),
+          gstRate: 5,
+          stock: 50,
+          lowStockThreshold: 12,
+          isActive: true,
+          createdBy: admin._id,
+        },
+      ]);
+      logger.info('Initialized default catalogue products');
+    }
+  } catch (err) {
+    logger.warn('Initial data auto-init notice', { error: err });
+  }
+}
+
 // ── Bootstrap ───────────────────────────────────────────────
 async function bootstrap() {
   try {
     await connectDB();
+    await ensureInitialData();
 
     const port = parseInt(process.env.PORT ?? '3001', 10);
     app.listen(port, () => {
