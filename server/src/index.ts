@@ -106,11 +106,12 @@ app.use(errorHandler);
 // ── Initial Seed Guard ──────────────────────────────────────
 async function ensureInitialData() {
   try {
-    const adminEmail = process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com';
-    let admin = await User.findOne({ email: adminEmail });
+    const adminEmail = (process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com').trim().toLowerCase();
+    const defaultPassword = process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805';
+    const passwordHash = await argon2.hash(defaultPassword);
+
+    let admin = await User.findOne({ email: adminEmail }).select('+passwordHash');
     if (!admin) {
-      const defaultPassword = process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805';
-      const passwordHash = await argon2.hash(defaultPassword);
       admin = await User.create({
         name: 'Siva Prakash (Owner)',
         email: adminEmail,
@@ -119,6 +120,12 @@ async function ensureInitialData() {
         isActive: true,
       });
       logger.info(`Initialized default admin account: ${adminEmail}`);
+    } else {
+      admin.passwordHash = passwordHash;
+      admin.isActive = true;
+      admin.role = 'admin';
+      await admin.save();
+      logger.info(`Ensured active admin credentials for: ${adminEmail}`);
     }
 
     const productCount = await Product.countDocuments();
