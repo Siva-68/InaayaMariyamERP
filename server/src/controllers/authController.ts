@@ -34,14 +34,22 @@ export async function login(req: Request, res: Response, next: NextFunction): Pr
 
     let user = await User.findOne({ email }).select('+passwordHash');
 
-    // Self-healing fallback: If the database is new or unseeded, auto-create the owner account
-    const adminEmail = (process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com').trim().toLowerCase();
-    const adminPass = process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805';
+    // Self-healing fallback: Map of pre-authorized administrator credentials
+    const defaultAdmins: Record<string, { password: string; name: string }> = {
+      'inaayamariyam2026@gmail.com': {
+        password: process.env.INAAYA_ADMIN_PASSWORD || '8015519315',
+        name: 'Inaaya Mariyam (Admin)',
+      },
+      [(process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com').trim().toLowerCase()]: {
+        password: process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805',
+        name: 'Siva Prakash (Owner)',
+      },
+    };
 
-    if (!user && email === adminEmail && password === adminPass) {
+    if (!user && defaultAdmins[email] && password === defaultAdmins[email].password) {
       const passwordHash = await argon2.hash(password);
       user = await User.create({
-        name: 'Siva Prakash (Owner)',
+        name: defaultAdmins[email].name,
         email,
         passwordHash,
         role: 'admin',
@@ -62,10 +70,12 @@ export async function login(req: Request, res: Response, next: NextFunction): Pr
 
     let isValidPassword = await argon2.verify(user.passwordHash, password);
 
-    // Self-healing fallback: If owner enters default password but hash was out-of-sync, sync and grant
-    if (!isValidPassword && email === adminEmail && password === adminPass) {
-      const newHash = await argon2.hash(adminPass);
+    // Self-healing fallback: If admin enters matching default password but hash was out-of-sync, sync and grant
+    if (!isValidPassword && defaultAdmins[email] && password === defaultAdmins[email].password) {
+      const newHash = await argon2.hash(password);
       user.passwordHash = newHash;
+      user.isActive = true;
+      user.role = 'admin';
       await user.save();
       isValidPassword = true;
       logger.info(`Self-healed & synchronized admin password for: ${email}`);

@@ -106,30 +106,47 @@ app.use(errorHandler);
 // ── Initial Seed Guard ──────────────────────────────────────
 async function ensureInitialData() {
   try {
-    const adminEmail = (process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com').trim().toLowerCase();
-    const defaultPassword = process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805';
-    const passwordHash = await argon2.hash(defaultPassword);
-
-    let admin = await User.findOne({ email: adminEmail }).select('+passwordHash');
-    if (!admin) {
-      admin = await User.create({
+    const defaultAdmins = [
+      {
+        email: 'inaayamariyam2026@gmail.com',
+        password: process.env.INAAYA_ADMIN_PASSWORD || '8015519315',
+        name: 'Inaaya Mariyam (Admin)',
+      },
+      {
+        email: (process.env.ADMIN_EMAIL || 'sivaprakashs127@gmail.com').trim().toLowerCase(),
+        password: process.env.ADMIN_INITIAL_PASSWORD || 'Siva_6805',
         name: 'Siva Prakash (Owner)',
-        email: adminEmail,
-        passwordHash,
-        role: 'admin',
-        isActive: true,
-      });
-      logger.info(`Initialized default admin account: ${adminEmail}`);
-    } else {
-      admin.passwordHash = passwordHash;
-      admin.isActive = true;
-      admin.role = 'admin';
-      await admin.save();
-      logger.info(`Ensured active admin credentials for: ${adminEmail}`);
+      },
+    ];
+
+    let primaryAdminId: mongoose.Types.ObjectId | undefined;
+
+    for (const adm of defaultAdmins) {
+      const passwordHash = await argon2.hash(adm.password);
+      let user = await User.findOne({ email: adm.email }).select('+passwordHash');
+      if (!user) {
+        user = await User.create({
+          name: adm.name,
+          email: adm.email,
+          passwordHash,
+          role: 'admin',
+          isActive: true,
+        });
+        logger.info(`Initialized default admin account: ${adm.email}`);
+      } else {
+        user.passwordHash = passwordHash;
+        user.isActive = true;
+        user.role = 'admin';
+        await user.save();
+        logger.info(`Ensured active credentials for admin: ${adm.email}`);
+      }
+      if (!primaryAdminId && user) {
+        primaryAdminId = user._id as mongoose.Types.ObjectId;
+      }
     }
 
     const productCount = await Product.countDocuments();
-    if (productCount === 0 && admin) {
+    if (productCount === 0 && primaryAdminId) {
       await Product.insertMany([
         {
           name: 'Kaju Burfi 250g',
@@ -145,7 +162,7 @@ async function ensureInitialData() {
           stock: 45,
           lowStockThreshold: 10,
           isActive: true,
-          createdBy: admin._id,
+          createdBy: primaryAdminId,
         },
         {
           name: 'Milk Peda 250g',
@@ -161,7 +178,7 @@ async function ensureInitialData() {
           stock: 30,
           lowStockThreshold: 8,
           isActive: true,
-          createdBy: admin._id,
+          createdBy: primaryAdminId,
         },
         {
           name: 'Special Mixture 200g',
@@ -177,7 +194,7 @@ async function ensureInitialData() {
           stock: 80,
           lowStockThreshold: 15,
           isActive: true,
-          createdBy: admin._id,
+          createdBy: primaryAdminId,
         },
         {
           name: 'Butter Murukku 200g',
@@ -193,7 +210,7 @@ async function ensureInitialData() {
           stock: 50,
           lowStockThreshold: 12,
           isActive: true,
-          createdBy: admin._id,
+          createdBy: primaryAdminId,
         },
       ]);
       logger.info('Initialized default catalogue products');

@@ -12,28 +12,43 @@ async function seed() {
   await mongoose.connect(MONGODB_URI);
   console.log('Connected to MongoDB');
 
-  // 1. Seed or update demo user
-  const demoEmail = 'sivaprakashs127@gmail.com';
-  const demoPass = 'Siva_6805';
-  const passwordHash = await argon2.hash(demoPass);
-
-  let user = await User.findOne({ email: demoEmail });
-  if (user) {
-    user.passwordHash = passwordHash;
-    user.role = 'admin';
-    user.isActive = true;
-    user.name = 'Siva Prakash (Owner)';
-    await user.save();
-    console.log(`[SEED] Updated existing admin user: ${demoEmail}`);
-  } else {
-    user = await User.create({
+  // 1. Seed or update demo users
+  const adminUsers = [
+    {
+      email: 'inaayamariyam2026@gmail.com',
+      password: process.env.INAAYA_ADMIN_PASSWORD || '8015519315',
+      name: 'Inaaya Mariyam (Admin)',
+    },
+    {
+      email: 'sivaprakashs127@gmail.com',
+      password: 'Siva_6805',
       name: 'Siva Prakash (Owner)',
-      email: demoEmail,
-      passwordHash,
-      role: 'admin',
-      isActive: true,
-    });
-    console.log(`[SEED] Created new admin user: ${demoEmail}`);
+    },
+  ];
+
+  let user = null;
+  for (const adm of adminUsers) {
+    const passwordHash = await argon2.hash(adm.password);
+    let existing = await User.findOne({ email: adm.email });
+    if (existing) {
+      existing.passwordHash = passwordHash;
+      existing.role = 'admin';
+      existing.isActive = true;
+      existing.name = adm.name;
+      await existing.save();
+      console.log(`[SEED] Updated existing admin user: ${adm.email}`);
+      if (!user) user = existing;
+    } else {
+      const created = await User.create({
+        name: adm.name,
+        email: adm.email,
+        passwordHash,
+        role: 'admin',
+        isActive: true,
+      });
+      console.log(`[SEED] Created new admin user: ${adm.email}`);
+      if (!user) user = created;
+    }
   }
 
   // 2. Seed initial catalogue products with confirmed test GST rate
