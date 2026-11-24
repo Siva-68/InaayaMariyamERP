@@ -26,7 +26,7 @@ async function seed() {
     },
   ];
 
-  let user = null;
+  let user: any = null;
   for (const adm of adminUsers) {
     const passwordHash = await argon2.hash(adm.password);
     let existing = await User.findOne({ email: adm.email });
